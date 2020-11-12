@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:5500/index.html# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Portfolio</title>
+        
+        
+    <link rel="stylesheet" href="./Portfolio_files/style.css"></head>
+    <body data-new-gr-c-s-check-loaded="14.983.0">
+        <div class="wrapper">
+          <header>
+            <h1>Mariya Sira</h1>
+             <button></button>
+          </header>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="nav">
+            <ul>
+                <li><a href="http://127.0.0.1:5500/index.html#">Skills</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#">Project</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#">Experience</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#">+38 050 776 49 60</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#">Want to collaborate?</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#">email me</a></li>
+            </ul>
+        </nav>
+          <ul class="links">
+              <li><a href="http://127.0.0.1:5500/index.html#">linkedin</a></li>
+              <li><a href="http://127.0.0.1:5500/index.html#">github</a></li>
+              <li><a href="http://127.0.0.1:5500/index.html#">fb</a></li>
+          </ul>
+		  <section class="hero">
+            <div class="hero-text">
+                <strong class="welcome">WELCOME TEXT</strong> 
+                <div class="info">
+                    <span>since 2010</span>
+                    <strong>Markup Developer</strong>
+                    <p>Strong professional focus and personal interest to UI/UX design and Front-End engineering </p>
+                </div> 
+            </div>
+          </section>
+          <section class="parallax"></section>
+          <section class="skills">
+                <h2 class="title">SKILLS</h2>
+                <div class="skills-list">
+                    <div class="skills-list-item">HTML/CSS</div>
+                </div>
+            </section>
+          
+          <section class="">
+              <h2 class="title">PROJECTS</h2>
+          </section>
+          <section class="">
+              <h2 class="title">EXPERIENCE</h2>
+          </section>
+          <footer></footer>
+        </div>  
+    <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

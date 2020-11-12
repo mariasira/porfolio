@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-size: 32px;
+  background: #e5e5e5; }
+
+.wrapper {
+  padding: 80px;
+  min-height: 100vh; }
+
+header {
+  height: 80px;
+  position: fixed;
+  background: #e5e5e5;
+  top: 0;
+  left: 0; }
+
+.menu {
+  width: 80px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 56px;
+  height: 31px;
+  background: transparent;
+  transition: transform 250ms ease;
+  cursor: pointer;
+  z-index: 200;
+  transform: translateX(54px); }
+
+.menu span {
+  width: 48px;
+  height: 5px;
+  background-color: #75715e;
+  transform-origin: center center;
+  transition: transform 250ms ease;
+  z-index: 200;
+  transform: translateX(8px); }
+
+.menu span:nth-of-type(1) {
+  transform: translateY(-8px); }
+
+.menu span:nth-of-type(3) {
+  transform: translateY(8px); }
+
+#menu {
+  display: none; }
+
+#menu:checked ~ .menu {
+  background-color: transparent;
+  transform: rotate(360deg);
+  transition: transform 250ms ease; }
+
+#menu:checked ~ .menu span {
+  background-color: #75715e;
+  transition: transform 250ms ease; }
+
+#menu:checked ~ .menu span:nth-of-type(1) {
+  transform: translateY(4px) rotate(45deg); }
+
+#menu:checked ~ .menu span:nth-of-type(2) {
+  display: none; }
+
+#menu:checked ~ .menu span:nth-of-type(3) {
+  transform: translateY(-1px) rotate(-45deg); }
+
+#menu:checked ~ .nav {
+  left: 0px;
+  transition: left 500ms ease; }
+
+#menu:checked ~ .wrapper {
+  transform: translateX(50%);
+  transition: transform 500ms ease; }
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  transition: left 500ms ease;
+  z-index: 100; }
+
+.nav ul {
+  position: relative;
+  height: 100vh;
+  list-style-type: none;
+  margin: 153px 0px 153px 80px;
+  padding: 0; }
+
+.nav ul li {
+  position: relative;
+  display: block;
+  border-bottom: 5px solid white; }
+
+.nav ul li a {
+  position: relative;
+  display: block;
+  padding: 15px 20px;
+  color: #272822;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.nav ul li a:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 250ms ease;
+  z-index: -1; }
+
+.nav ul li a:hover {
+  color: #75715e; }
+
+.nav ul li a:hover:before {
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5e5;
+  transition: width 250ms ease; }
+
+.links {
+  width: 80px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.hero {
+  width: 100%;
+  background: #e6db74;
+  height: calc(100vh - 160px);
+  margin: 0 0 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .hero:before {
+    content: "";
+    width: 50%;
+    background: #f5f5f5;
+    height: calc(100vh - 160px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0; }
+  .hero-text {
+    position: relative;
+    z-index: 10; }
+  .hero .info {
+    opacity: 0;
+    display: none; }
+  .hero:hover:before {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 4s, transform 2s; }
+  .hero:hover .info {
+    display: block;
+    opacity: 1; }
+  .hero:hover .welcome {
+    opacity: 0;
+    display: none; }
+
+.skills .title {
+  text-transform: uppercase; }
+
+.skills-list {
+  line-height: 37px;
+  position: relative; }
+  .skills-list-item:after {
+    content: "";
+    position: absolute;
+    background-color: #f92672;
+    width: 14px;
+    height: 14px;
+    border-radius: 5px; }
