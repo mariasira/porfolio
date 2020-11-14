@@ -4,46 +4,48 @@
         <title>Portfolio</title>
         <meta charset = "utf-8">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,100&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="wrapper">
-          <header>
-            <h1>Mariya Sira</h1>
-             <button></button>
+          <header class="wrapper-header">
+            <h3 class="wrapper-header-heading">Mariya Sira</h3>
+            <button></button>
           </header>
-        <input type="checkbox" id="menu" />
+        <input type="checkbox" id="menu">
         <label for="menu" class="menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="menu-line"></span>
         </label>
         <nav class="nav">
-            <ul>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="#">+38 050 776 49 60</a></li>
-                <li><a href="#">Want to collaborate?</a></li>
-                <li><a href="#">email me</a></li>
+            <ul class="slider">
+                <li><a class="subtitle" href="#">Skills</a></li>
+                <li><a class="subtitle" href="#">Projects</a></li>
+                <li><a class="subtitle" href="#">Experience</a></li>
+                <li><a class="phone" href="#">+38 050 776 49 60</a></li>
+                <li><a class="data" href="#">Want to collaborate?</a></li>
+                <li><a class="subtitle" href="#">email me</a></li>
             </ul>
         </nav>
           <ul class="links">
-              <li><a href="#">linkedin</a></li>
-              <li><a href="#">github</a></li>
-              <li><a href="#">fb</a></li>
+              <li><img class="links-img" src="img/img-in.svg"></li>
+              <li><img class="links-img" src="img/img-git.svg"></li>
+              <li><img class="links-img" src="img/img-fb.svg"></li>
           </ul>
 		  <section class="hero">
             <div class="hero-text">
                 <strong class="welcome">WELCOME TEXT</strong> 
                 <div class="info">
-                    <span>since 2010</span>
-                    <strong>Markup Developer</strong>
-                    <p>Strong professional focus and personal interest to UI/UX design and Front-End engineering </p>
+                    <h6 class="data">since 2010</h6>
+                    <strong class="subtitle">Markup Developer</strong>
+                    <div class="info-about">
+                        <p>Strong professional focus and personal interest to UI/UX design and Front-End engineering</p>
+                    </div>
                 </div> 
             </div>
           </section>
           <section class="parallax"></section>
-          <section class="skills">
+          <section class="catalog">
                 <h2 class="title">SKILLS</h2>
                 <div class="list">
                     <div class="list-bar">
@@ -56,24 +58,41 @@
                         <span class="list-bar-item">Git</span>
                         </div>
                     <div class="list-fill">
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
-                        <div class="list-fill-rate"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
+                        <div class="list-fill-decor"></div>
                     </div>
                 </div>
             </section>
+          <section class="content">
+            <h2 class="title">PROJECTS</h2>
+            <h5 class="subtitle">Mylib</h5>
+            <p>Components libtary with html and css code examples</p>
+            <a href="">gitlab</a>
+            <p></p>
+            <h5 class="subtitle">Adaptive Layout Example</h5>
+            <p>html page with burger menu</p>
+            <a href="">gitlab</a>
+            <p></p>
           </section>
           <section class="">
-              <h2 class="title">PROJECTS</h2>
+            <h2 class="title">EXPERIENCE</h2>
+            <h6 class="data">august 2020-november 2020</h6>
+            <h5 class="subtitle">IT school Hillel</h5>
+            <p>Front-end basic course</p>
+            <a href="">certificate</a>
+            <p></p>
           </section>
-          <section class="">
-              <h2 class="title">EXPERIENCE</h2>
-          </section>
-          <footer></footer>
+          <footer>
+            <a href="#">+38 050 776 49 60</a></li>
+            <p class="data">Want to collaborate?</p>
+            <h5 class="subtitle"><a href="#">email me</a></h5>
+            <a href="#">+38 050 776 49 60</a></li>
+          </footer>
         </div>  
     </body>
 </html>

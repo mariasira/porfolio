@@ -2,19 +2,30 @@
 @import "reset";
 
 body {
-  font-size: $text-size;
-  background: $bg-color;
+  font-size: $pr-fs;
+  line-height: $pr-lh;
+  background: $gap-color;
+  font-family: "Roboto", sans-serif;
 }
 .wrapper {
-  padding: $gap;
+  padding: 0 $gap;
   min-height: 100vh;
-}
-header {
-  height: $gap;
-  position: fixed;
-  background: $bg-color;
-  top: 0;
-  left: 0;
+  &-header {
+    height: $gap;
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 150;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-heading {
+      color: $main-text;
+      font-size: $sc-fs;
+      line-height: $sc-lh;
+    }
+  }
 }
 .menu {
   width: $gap;
@@ -32,21 +43,30 @@ header {
   cursor: pointer;
   z-index: 200;
   transform: translateX(54px);
-}
-.menu span {
-  width: 48px;
-  height: 5px;
-  background-color: $icon-color;
-  transform-origin: center center;
-  transition: transform 250ms ease;
-  z-index: 200;
-  transform: translateX(8px);
-}
-.menu span:nth-of-type(1) {
-  transform: translateY(-8px);
-}
-.menu span:nth-of-type(3) {
-  transform: translateY(8px);
+  &-line {
+    width: 48px;
+    height: 5px;
+    position: relative;
+    background-color: $icon-color;
+    transform-origin: center center;
+    transition: transform 250ms ease;
+    z-index: 200;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 48px;
+      height: 5px;
+      background-color: $icon-color;
+      margin: 0 0 0 -8px;
+    }
+    &:before {
+      transform: translateY(-8px);
+    }
+    &:after {
+      transform: translateY(8px);
+    }
+  }
 }
 #menu {
   display: none;
@@ -80,7 +100,7 @@ header {
 
 .nav {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: -100%;
   width: 50%;
   height: 100vh;
@@ -94,24 +114,22 @@ header {
   position: relative;
   height: 100vh;
   list-style-type: none;
-  margin: 153px 0px 153px 80px;
   padding: 0;
+  margin: 0px 0px 0px 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .nav ul li {
   position: relative;
   display: block;
-
   border-bottom: 5px solid white;
 }
 .nav ul li a {
   position: relative;
   display: block;
-  padding: 15px 20px;
-  color: $main-text;
-  font-size: 14px;
-  font-weight: bold;
+  padding: 0px 0px 32px 0px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 .nav ul li a:before {
   position: absolute;
@@ -141,6 +159,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &-img {
+    height: 24px;
+    width: 24px;
+  }
+}
+.phone {
+  line-height: $sc-lh;
+  font-size: $sc-fs;
+  color: $main-text;
 }
 .hero {
   width: 100%;
@@ -154,7 +181,7 @@ header {
   &:before {
     content: "";
     width: 50%;
-    background: #f5f5f5;
+    background: $bg-color;
     height: calc(100vh - 160px);
     position: absolute;
     right: 0;
@@ -168,6 +195,12 @@ header {
   .info {
     opacity: 0;
     display: none;
+    &-about {
+      padding: 32px 0px 0px;
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   &:hover {
     &:before {
@@ -185,9 +218,40 @@ header {
     }
   }
 }
-.skills {
+.parallax {
+  background-image: url(../img/img-working-place.svg);
+  height: calc(100vh - 160px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.catalog {
+  width: 100%;
+  background: $bg-color;
+  height: calc(100vh - 160px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .title {
+  font-weight: 900;
+  font-size: $title-fs;
+  line-height: $title-lh;
+  color: $main-text;
+  margin: $gap 0px 0px $gap;
+}
+.subtitle {
+  font-weight: 900;
+  font-size: $pr-fs;
+  line-height: $pr-lh;
+  color: $main-text;
+}
+.data {
+  color: $brand-color;
+  font-size: $sc-fs;
+  line-height: $sc-lh;
+  font-style: italic;
 }
 .list {
   display: flex;
@@ -195,22 +259,43 @@ header {
   &-bar {
     display: flex;
     flex-direction: column;
+    align-content: space-between;
     flex-grow: 1;
     &-item {
-      height: 20px;
+      margin: 0px 0px 10px 80px;
     }
   }
   &-fill {
     display: flex;
     flex-direction: column;
+    align-content: space-between;
     flex-grow: 4;
     position: relative;
-    &-rate {
-      height: 20px;
-      width: 14px;
-      height: 14px;
-      border-radius: 7px;
-      background-color: $brand-color;
+    &-decor {
+      height: 37px;
+      margin: 0px 0px 10px 0px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        background-color: $brand-color;
+      }
     }
+  }
+}
+.list-fill-decor:nth-child(2):before {
+  animation: list-fill 2.8s;
+  height: 14px;
+  background-color: $brand-color;
+  width: 85%;
+}
+@keyframes list-fill {
+  0% {
+    width: 0%;
   }
 }
