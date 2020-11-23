@@ -29,7 +29,7 @@ body {
 }
 .menu {
   width: 56px;
-  height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
   position: fixed;
   left: 0;
   display: flex;
@@ -188,8 +188,8 @@ a[href$=".email"] {
 .hero {
   width: 100%;
   background: $primary-color;
-  height: calc(100vh - 160px);
-  margin: 0 0 $gap;
+  min-height: calc(100vh - 160px);
+  margin: 0;
   position: relative;
   display: flex;
   justify-content: center;
@@ -197,13 +197,13 @@ a[href$=".email"] {
   &:before {
     content: "";
     width: 50%;
-    background: #f5f5f5;
+    background: $bg-color;
     height: calc(100vh - 160px);
     position: absolute;
     right: 0;
     top: 0;
     z-index: 0;
-    transition: transform 1s ease, opacity 1s ease-out;
+    transition: transform 1s ease, opacity 1s ease-out, scale 1s ease;
   }
   &-text {
     position: relative;
@@ -245,7 +245,7 @@ a[href$=".email"] {
   }
   &:hover {
     &:before {
-      transform: rotate(-180deg);
+      transform: rotate(-120deg) scale(0.1, 0.1);
       opacity: 0;
     }
     .info {
@@ -260,28 +260,37 @@ a[href$=".email"] {
   }
 }
 .parallax {
+  width: 100%;
+  min-height: 100vh;
   background-image: url(../img/img-working-place.svg);
-  height: calc(100vh - 160px);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: $gap 0 $gap 0;
 }
 .catalog {
   width: 100%;
-  margin: $gap 0 0 0;
-  background: $bg-color;
-  height: calc(100vh - 80px);
+  height: 100vh;
+  margin: 0 0 $gap 0;
+  background: rgb(230, 219, 116);
+  background: linear-gradient(
+    140deg,
+    rgba(230, 219, 116, 0.46122198879551823) 28%,
+    rgba(245, 245, 245, 1) 68%
+  );
   position: relative;
   display: flex;
   flex-direction: column;
+  & h2 {
+    margin: $gap 0 $gap $gap;
+  }
 }
 .title {
   font-weight: 900;
   font-size: $title-fs;
   line-height: $title-lh;
   color: $main-text;
-  margin: $gap 0px 0px $gap;
 }
 .subtitle {
   font-weight: 900;
@@ -319,89 +328,226 @@ a[href$=".email"] {
     align-content: space-between;
     flex-grow: 4;
     position: relative;
+    margin: 0 30px 0 0;
     &-decor {
       height: 37px;
-      margin: 0px 0px 20px 0px;
-      position: relative;
+      margin: 0px 10px 20px 0px;
       display: flex;
       align-items: center;
+      & .html,
+      & .layout,
+      & .boot,
+      & .jq,
+      & .pre,
+      & .gulp,
+      & .git {
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        background: $brand-color;
+      }
     }
   }
 }
-.square {
+
+@keyframes html {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes layout {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+@keyframes boot {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes jq {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 62%;
+  }
+}
+@keyframes pre {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes gulp {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes git {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+.list-fill:hover .html {
+  width: 80%;
+  animation: html 2s ease-out;
+}
+.list-fill:hover .layout {
+  width: 75%;
+  animation: layout 2s ease-out;
+}
+.list-fill:hover .boot {
+  width: 60%;
+  animation: boot 2s ease-out;
+}
+.list-fill:hover .jq {
+  width: 62%;
+  animation: jq 2s ease-out;
+}
+.list-fill:hover .pre {
+  width: 80%;
+  animation: pre 2s ease-out;
+}
+.list-fill:hover .gulp {
+  width: 70%;
+  animation: gulp 2s ease-out;
+}
+.list-fill:hover .git {
+  width: 75%;
+  animation: git 2s ease-out;
+}
+
+.projects {
+  display: block;
   position: relative;
-  height: 14px;
-  .left,
-  .center,
-  .right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: $brand-color;
-  }
-  .left,
-  .right {
-    width: 7px;
-  }
-  .left {
-    border-radius: 7px 0 0 7px;
-  }
-  .right {
-    border-radius: 0 7px 7px 0;
-  }
-  .center {
-    left: 7px;
-    width: 1px;
-    transform: scaleX(20);
-    transform-origin: left;
-  }
-  .right {
-    transform: translateX(27px);
-  }
-  .center {
-    animation: center-animate 5s ease infinite alternate;
-  }
-  .right {
-    animation: right-animate 5s ease infinite alternate;
-  }
-  @keyframes right-animate {
-    0% {
-      transform: translateX(450px);
-    }
-    100% {
-      transform: translateX(7px);
-    }
-  }
-  @keyframes center-animate {
-    0% {
-      transform: scaleX(444);
-    }
-    100% {
-      transform: scaleX(1);
-    }
-  }
+  width: 100%;
+  height: 100vh;
+  margin: 0 0 $gap 0;
+  background-image: url(../img/img-devices.svg);
+  background-position: center;
+  background-size: cover;
+}
+.pr-txt {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.pr-txt h2 {
+  color: $title-color;
+  padding: 40px 0 0 $gap;
+}
+.pr-txt h5 {
+  color: $gap-color;
+  padding: $gap 0 37px $gap;
+}
+.pr-txt p {
+  color: $gap-color;
+  width: 50%;
+  padding: 0 0 16px $gap;
+}
+.pr-txt {
+  display: none;
+}
+.pr-txt h2,
+.pr-txt h6,
+.pr-txt h5,
+.pr-txt p,
+.pr-txt a,
+.ipr-txt img {
+  display: none;
+}
+.pr-txt a {
+  color: $brand-color;
+  padding: 0 0 0 $gap;
+}
+.pr-txt svg {
+  position: absolute;
+  margin: 16px 0 0 8px;
+}
+.pr-txt svg * {
+  fill: $brand-color;
+}
+.projects:hover div.pr-txt {
+  display: block;
+  background: $holder-color;
+}
+.projects:hover div.pr-txt .txt {
+  display: block;
+}
+.exp {
+  width: 100%;
+  height: 100vh;
+  background: rgb(245, 245, 245);
+  background: linear-gradient(
+    140deg,
+    rgba(245, 245, 245, 1) 28%,
+    rgba(230, 219, 116, 1) 68%
+  );
+  position: relative;
 }
 
-.holder {
-  &-area {
-    width: 100%;
-    background: $holder-color;
-    height: calc(100vh - 160px);
-    position: relative;
-    &:after {
-      content: "";
-      background-image: url(//img/img-devices.svg);
-      width: 100%;
-      height: calc(100vh - 160px);
+.exp-txt {
+  position: relative;
+  & h2 {
+    padding: $gap 0 $gap $gap;
+  }
+  & h6 {
+    padding: 0 0 0 $gap;
+  }
+  & h5 {
+    padding: 0 0 0 $gap;
+  }
+  & p {
+    padding: 0 0 0 $gap;
+  }
+  & a {
+    padding: 0 0 0 $gap;
+
+    & svg {
       position: absolute;
+      margin: 20px 0 0 8px;
+    }
+    & svg * {
+      fill: $brand-color;
     }
   }
-  &:hover {
-  }
 }
-
 .footer {
+  margin: $gap 0 0 0;
   display: flex;
   height: 160px;
   justify-content: space-between;
+  align-items: center;
+  &-link {
+    text-decoration: none;
+    color: $main-text;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  & a {
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
